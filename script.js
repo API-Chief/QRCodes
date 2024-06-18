@@ -1,16 +1,34 @@
-const url = 'https://qr-code90.p.rapidapi.com/qr?url=www.google.com';
-const options = {
-    method: 'GET',
-    headers: {
-        'x-rapidapi-key': 'YOUR_RAPIDAPI_KEY', // Replace with your actual RapidAPI key
-        'x-rapidapi-host': 'qr-code90.p.rapidapi.com'
-    }
-};
+function decodeApiKey(encodedKey) {
+    // Decoding the base64 encoded API key
+    return atob(encodedKey);
+}
 
-try {
-    const response = await fetch(url, options);
-    const result = await response.text();
-    console.log(result);
-} catch (error) {
-    console.error(error);
+async function generateCode() {
+    const urlInput = document.getElementById('urlInput').value;
+    const qrImage = document.getElementById('qrImage');
+
+    if (!urlInput) {
+        alert('Please enter a URL');
+        return;
+    }
+
+    const encodedApiKey = 'WU9VUl9SQVBJREFQSV9LRVk='; // Your base64 encoded API key
+
+    try {
+        const response = await fetch(`https://qr-code90.p.rapidapi.com/qr?url=${encodeURIComponent(urlInput)}`, {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': decodeApiKey(encodedApiKey),
+                'x-rapidapi-host': 'qr-code90.p.rapidapi.com'
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const blob = await response.blob();
+        const objectURL = URL.createObjectURL(blob);
+        qrImage.src = objectURL;
+    } catch (error) {
+        console.error('Error generating QR code:', error);
+    }
 }
