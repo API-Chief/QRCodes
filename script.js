@@ -12,7 +12,7 @@ async function generateCode() {
         return;
     }
 
-    const encodedApiKey = 'NGZlNjQ0MWFkYm1zaDVmZjg5ZGE0ZjMyM2M1Y3AxNWMzMzBqc240ODVjZjA1Mjk1MGI='; // Your base64 encoded API key
+    const encodedApiKey = 'ZWM3MzM3NDNlNG1zaGI0NTYyMWQwZjk5ZTgyNnAxMDU0Y2Zqc24xZmMxODkxZWY1MDU='; // Your base64 encoded API key
 
     try {
         const response = await fetch(`https://qr-code90.p.rapidapi.com/qr?url=${encodeURIComponent(urlInput)}`, {
