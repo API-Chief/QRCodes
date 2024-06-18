@@ -11,7 +11,7 @@ async function generateCode() {
         const response = await fetch(`https://qr-code90.p.rapidapi.com/qr?url=${encodeURIComponent(urlInput)}`, {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': RAPIDAPI_KEY,
+                'x-rapidapi-key': 'RAPIDAPI_KEY_PLACEHOLDER',
                 'x-rapidapi-host': 'qr-code90.p.rapidapi.com'
             }
         });
