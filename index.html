@@ -73,6 +73,18 @@
             background-color: #333;
         }
 
+        .api-link {
+            font-size: 1rem;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+
+        .api-link:hover {
+            color: #333;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -96,6 +108,7 @@
     <p>Generate high-quality barcodes and QR codes with ease.</p>
     <img src="download.png" alt="QR Code">
     <button onclick="generateCode()">Generate Code</button>
+    <a href="https://rapidapi.com/rizzards-of-oz-rizzards-of-oz-default/api/qr-code90" class="api-link" target="_blank">API Documentation</a>
 
     <script>
         function generateCode() {
