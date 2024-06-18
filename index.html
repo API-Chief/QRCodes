@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode & QR Code Generator</title>
+    <meta name="description" content="Generate high-quality barcodes and QR codes with ease. Fast, reliable, and free barcode and QR code generation.">
+    <meta name="keywords" content="barcode generator, QR code generator, free barcode, free QR code, barcode generator online, QR code generator online">
+    <meta name="author" content="Your Name">
+    <link rel="canonical" href="https://yourwebsite.com">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Barcode & QR Code Generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/download.png">
+    <meta property="og:description" content="Generate high-quality barcodes and QR codes with ease. Fast, reliable, and free barcode and QR code generation.">
+    <meta property="og:site_name" content="Barcode & QR Code Generator">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yourtwitterhandle">
+    <meta name="twitter:title" content="Barcode & QR Code Generator">
+    <meta name="twitter:description" content="Generate high-quality barcodes and QR codes with ease. Fast, reliable, and free barcode and QR code generation.">
+    <meta name="twitter:image" content="https://yourwebsite.com/download.png">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 2s ease-in-out 2s;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Barcode & QR Code Generator</h1>
+    <p>Generate high-quality barcodes and QR codes with ease.</p>
+    <img src="download.png" alt="QR Code">
+    <button onclick="generateCode()">Generate Code</button>
+
+    <script>
+        function generateCode() {
+            alert('This button will trigger the code generation.');
+        }
+    </script>
+</body>
+</html>
