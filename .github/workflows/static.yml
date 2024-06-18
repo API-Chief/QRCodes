@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Replace API key in script.js
-        run: sed -i 's/RAPIDAPI_KEY_PLACEHOLDER/${{ secrets.RAPIDAPI_KEY }}/' script.js
+        run: sed -i 's/YOUR_BASE64_ENCODED_API_KEY_PLACEHOLDER/${{ secrets.BASE64_RAPIDAPI_KEY }}/' script.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
