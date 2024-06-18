@@ -1,3 +1,8 @@
+function decodeApiKey(encodedKey) {
+    // Decoding the base64 encoded API key
+    return atob(encodedKey);
+}
+
 async function generateCode() {
     const urlInput = document.getElementById('urlInput').value;
     const qrImage = document.getElementById('qrImage');
@@ -7,11 +12,13 @@ async function generateCode() {
         return;
     }
 
+    const encodedApiKey = 'WU9VUl9SQVBJREFQSV9LRVk='; // Your base64 encoded API key
+
     try {
         const response = await fetch(`https://qr-code90.p.rapidapi.com/qr?url=${encodeURIComponent(urlInput)}`, {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': 'RAPIDAPI_KEY_PLACEHOLDER',
+                'x-rapidapi-key': decodeApiKey(encodedApiKey),
                 'x-rapidapi-host': 'qr-code90.p.rapidapi.com'
             }
         });
