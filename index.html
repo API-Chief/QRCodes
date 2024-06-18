@@ -3,117 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barcode & QR Code Generator</title>
-    <meta name="description" content="Generate high-quality barcodes and QR codes with ease. Fast, reliable, and free barcode and QR code generation.">
-    <meta name="keywords" content="barcode generator, QR code generator, free barcode, free QR code, barcode generator online, QR code generator online">
-    <meta name="author" content="Your Name">
-    <link rel="canonical" href="https://yourwebsite.com">
-
-    <!-- Open Graph data -->
-    <meta property="og:title" content="Barcode & QR Code Generator">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com">
-    <meta property="og:image" content="https://yourwebsite.com/download.png">
-    <meta property="og:description" content="Generate high-quality barcodes and QR codes with ease. Fast, reliable, and free barcode and QR code generation.">
-    <meta property="og:site_name" content="Barcode & QR Code Generator">
-
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@yourtwitterhandle">
-    <meta name="twitter:title" content="Barcode & QR Code Generator">
-    <meta name="twitter:description" content="Generate high-quality barcodes and QR codes with ease. Fast, reliable, and free barcode and QR code generation.">
-    <meta name="twitter:image" content="https://yourwebsite.com/download.png">
-
+    <meta name="description" content="Professional and modern QR code generator website with SEO optimization and smooth animations.">
+    <title>QR Code Generator</title>
     <style>
         body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #fff;
-            color: #000;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeIn 2s ease-in-out;
+        .container {
+            text-align: center;
         }
-
-        p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeIn 2s ease-in-out 1s;
+        .qr-container {
+            margin-top: 20px;
         }
-
         img {
-            width: 300px;
-            height: 300px;
-            margin-bottom: 1rem;
-            animation: bounce 2s infinite;
+            max-width: 100%;
+            height: auto;
         }
-
-        button {
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            animation: fadeIn 2s ease-in-out 2s;
-        }
-
-        button:hover {
-            background-color: #333;
-        }
-
-        .api-link {
-            font-size: 1rem;
-            margin-top: 2rem;
-            text-decoration: none;
-            color: #000;
-            transition: color 0.3s ease;
-        }
-
-        .api-link:hover {
-            color: #333;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-30px);
-            }
-            60% {
-                transform: translateY(-15px);
-            }
+        input, button {
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Barcode & QR Code Generator</h1>
-    <p>Generate high-quality barcodes and QR codes with ease.</p>
-    <img src="download.png" alt="QR Code">
-    <button onclick="generateCode()">Generate Code</button>
-    <a href="https://rapidapi.com/rizzards-of-oz-rizzards-of-oz-default/api/qr-code90" class="api-link" target="_blank">API Documentation</a>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <p>Enter a URL to generate a QR code:</p>
+        <input type="text" id="urlInput" placeholder="Enter URL here">
+        <button onclick="generateCode()">Generate Code</button>
+        <div class="qr-container">
+            <img id="qrImage" src="download.png" alt="QR Code">
+        </div>
+    </div>
 
-    <script>
-        function generateCode() {
-            alert('This button will trigger the code generation.');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
