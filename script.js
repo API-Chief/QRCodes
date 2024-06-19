@@ -6,6 +6,8 @@ function decodeApiKey(encodedKey) {
 async function generateCode() {
     const urlInput = document.getElementById('urlInput').value;
     const qrImage = document.getElementById('qrImage');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const downloadButton = document.getElementById('downloadButton');
 
     if (!urlInput) {
         alert('Please enter a URL');
@@ -13,6 +15,8 @@ async function generateCode() {
     }
 
     const encodedApiKey = 'ZWM3MzM3NDNlNG1zaGI0NTYyMWQwZjk5ZTgyNnAxMDU0Y2Zqc24xZmMxODkxZWY1MDU='; // Your base64 encoded API key
+
+    loadingOverlay.classList.add('active');
 
     try {
         const response = await fetch(`https://qr-code90.p.rapidapi.com/qr?url=${encodeURIComponent(urlInput)}`, {
@@ -28,8 +32,13 @@ async function generateCode() {
         const blob = await response.blob();
         const objectURL = URL.createObjectURL(blob);
         qrImage.src = objectURL;
+
+        // Show the download button after the QR code is generated
+        downloadButton.style.display = 'block';
     } catch (error) {
         console.error('Error generating QR code:', error);
+    } finally {
+        loadingOverlay.classList.remove('active');
     }
 }
 
