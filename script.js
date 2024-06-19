@@ -32,3 +32,11 @@ async function generateCode() {
         console.error('Error generating QR code:', error);
     }
 }
+
+function downloadQRCode() {
+    const qrImage = document.getElementById('qrImage');
+    const link = document.createElement('a');
+    link.href = qrImage.src;
+    link.download = 'qr-code.png';
+    link.click();
+}
